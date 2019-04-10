@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="button_gradient_top">#4141E9</color>
+    <color name="button_gradient_bottom">#B64FB6</color>
+
+
 </resources>

@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="drawer_header_def_dim">16dp</dimen>
+    <dimen name="drawer_item_seek_bar_limit">12</dimen>
+</resources>

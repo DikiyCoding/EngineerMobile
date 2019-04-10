@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".ui.activities.MainActivity">
+
+    <FrameLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp">
+
+        <ImageButton
+            android:id="@+id/btn_up"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center|top"
+            android:background="@null"
+            android:rotation="-90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <ImageButton
+            android:id="@+id/btn_down"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center|bottom"
+            android:background="@null"
+            android:rotation="90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <ImageButton
+            android:id="@+id/btn_left"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center|left"
+            android:background="@null"
+            android:rotation="-180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <ImageButton
+            android:id="@+id/btn_right"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center|right"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <ImageButton
+            android:id="@+id/btn_stop"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:src="@drawable/ic_stop" />
+
+    </FrameLayout>
+
+</LinearLayout>

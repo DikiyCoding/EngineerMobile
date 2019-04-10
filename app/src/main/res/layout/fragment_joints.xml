@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_shoulder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/layout_elbow"
+        app:layout_constraintEnd_toStartOf="@+id/layout_waist"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_shoulder_up"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:rotation="-90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <TextView
+            android:id="@+id/tv_shoulder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/title_shoulder" />
+
+        <ImageButton
+            android:id="@+id/btn_shoulder_down"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:rotation="90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_waist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_shoulder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/layout_shoulder"
+        app:layout_constraintTop_toTopOf="@+id/layout_shoulder">
+
+
+        <ImageButton
+            android:id="@+id/btn_waist_left"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:rotation="-180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <TextView
+            android:id="@+id/tv_waist"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/title_waist" />
+
+        <ImageButton
+            android:id="@+id/btn_waist_right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_neck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_elbow"
+        app:layout_constraintEnd_toEndOf="@+id/layout_flippers"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop">
+
+        <ImageButton
+            android:id="@+id/btn_neck_up"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:rotation="-90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <TextView
+            android:id="@+id/tv_neck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/title_neck" />
+
+        <ImageButton
+            android:id="@+id/btn_neck_down"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:rotation="90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_stop"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_elbow"
+        app:layout_constraintEnd_toStartOf="@+id/layout_neck"
+        app:layout_constraintStart_toEndOf="@+id/layout_elbow"
+        app:layout_constraintTop_toTopOf="@+id/layout_elbow" />
+
+    <LinearLayout
+        android:id="@+id/layout_elbow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/layout_flippers"
+        app:layout_constraintEnd_toStartOf="@+id/btn_stop"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/layout_shoulder"
+        app:layout_constraintTop_toBottomOf="@+id/layout_shoulder">
+
+        <ImageButton
+            android:id="@+id/btn_elbow_up"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:rotation="-90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <TextView
+            android:id="@+id/tv_elbow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/title_elbow" />
+
+        <ImageButton
+            android:id="@+id/btn_elbow_down"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:rotation="90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_flippers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/layout_gripper"
+        app:layout_constraintTop_toBottomOf="@+id/layout_elbow">
+
+        <ImageButton
+            android:id="@+id/btn_flippers_up"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:rotation="-90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+        <TextView
+            android:id="@+id/tv_flippers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/title_flippers" />
+
+        <ImageButton
+            android:id="@+id/btn_flippers_down"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:rotation="90"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_move" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_gripper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_flippers"
+        app:layout_constraintEnd_toStartOf="@+id/layout_flippers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layout_flippers">
+
+        <Button
+            android:id="@+id/btn_gripper_grab"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/shape_btn_oval"
+            android:text="Open" />
+
+        <TextView
+            android:id="@+id/tv_gripper"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/title_gripper" />
+
+        <Button
+            android:id="@+id/btn_gripper_free"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/shape_btn_oval"
+            android:text="Close" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
