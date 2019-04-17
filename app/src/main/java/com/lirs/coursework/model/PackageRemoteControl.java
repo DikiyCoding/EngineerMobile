@@ -2,22 +2,10 @@ package com.lirs.coursework.model;
 
 public class PackageRemoteControl {
 
-    private static PackageRemoteControl instance;
+    static volatile byte[] packet;
 
-    private volatile byte[] packet;
-
-    private PackageRemoteControl() {
+    static {
         packet = createPackage();
-    }
-
-    public static PackageRemoteControl getInstance() {
-        if (instance == null)
-            instance = new PackageRemoteControl();
-        return instance;
-    }
-
-    public byte[] getPackage() {
-        return packet;
     }
 
     public Axis getAxis(int number) {
@@ -28,7 +16,7 @@ public class PackageRemoteControl {
         return new Button(number);
     }
 
-    private byte[] createPackage() {
+    private static byte[] createPackage() {
         byte[] newPacket = new byte[Constants.REMOTE_CONTROL_PACKET_SIZE];
         newPacket[Constants.FRAME_TYPE_POSITION] = Constants.REMOTE_CONTROL_PACKET_ID;
         return newPacket;
@@ -36,39 +24,28 @@ public class PackageRemoteControl {
 
     class Button {
 
-        private byte value;
-        private final int number;
         private final int position;
 
         private Button(int number) {
-            this.number = number;
             position = number + 33;
         }
 
         /**
-         * @param value - значения 0 или 1
+         * Принимаемый параметр - значения 0 или 1
          */
-        public void setValue(byte value) {
-            this.value = value;
-        }
 
-        public void updatePackage() {
-            packet[position] = value;
-        }
-
-        public void nullifyPackage() {
-            packet[position] = 0;
+        public void togglePackage(boolean toggle) {
+            packet[position] = toggle ? (byte) 1 : (byte) 0;
         }
     }
 
     class Axis {
 
-        private final int number;
         private final int position;
         private byte valueFirst, valueSecond;
+        private short speed;
 
         private Axis(int number) {
-            this.number = number;
             position = (number + 1) * 2;
         }
 
@@ -76,6 +53,14 @@ public class PackageRemoteControl {
          * @param speed - скорость (от -32768 до +32767)
          */
         public void setSpeed(short speed) {
+            this.speed = speed;
+            setDirection(true);
+        }
+
+        public void setDirection(boolean direction) {
+            short speed = this.speed;
+            if (!direction)
+                speed *= -1;
             valueFirst = (byte) (speed & 0xFF);
             valueSecond = (byte) ((speed >> 8) & 0xFF);
         }
