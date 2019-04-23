@@ -26,7 +26,7 @@ class ClientService : Service() {
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         Log.d("Logs", "Service \"onStartCommand\" is evoked")
         val client: Client = Parcels.unwrap(intent.getParcelableExtra("client"))
-        executor.execute(client)
+//        executor.execute(client)
         return super.onStartCommand(intent, flags, startId)
     }
 

@@ -176,7 +176,7 @@ object PackageManager {
 
     fun setNeckSpeed(speed: Int) = axisNeck.setSpeed(speedConvert(speed))
 
-    fun setDefaultSpeeds() {
+    private fun setDefaultSpeeds() {
         axis5.setSpeed(1)
         axis0.setSpeed(Constants.SPEED_DEFAULT)
         axis1.setSpeed(Constants.SPEED_DEFAULT)

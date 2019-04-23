@@ -1,4 +1,10 @@
 <resources>
     <dimen name="drawer_header_def_dim">16dp</dimen>
     <dimen name="drawer_item_seek_bar_limit">12</dimen>
+    <dimen name="btn_action_dimen_joints">50dp</dimen>
+    <dimen name="btn_toggle_dimen_joints">60dp</dimen>
+    <dimen name="btn_action_dimen_movement">65dp</dimen>
+    <dimen name="btn_toggle_dimen_movement">60dp</dimen>
+    <dimen name="layout_inside_margin">5dp</dimen>
+    <dimen name="layout_outside_margin">10dp</dimen>
 </resources>

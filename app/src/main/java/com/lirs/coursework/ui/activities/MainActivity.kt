@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import com.lirs.coursework.R
 import com.lirs.coursework.model.Client
 import com.lirs.coursework.model.ClientService
+import com.lirs.coursework.ui.fragments.InfoFragment
 import com.lirs.coursework.ui.fragments.JointsFragment
 import com.lirs.coursework.ui.fragments.MovementFragment
 import com.lirs.coursework.utils.DrawerHandler
@@ -20,6 +21,7 @@ import org.parceler.Parcels
 class MainActivity : AppCompatActivity() {
 
     private lateinit var serviceIntent: Intent
+    private lateinit var fragmentInfo: Fragment
     private lateinit var fragmentJoints: Fragment
     private lateinit var fragmentMovement: Fragment
     private lateinit var drawerHandler: DrawerHandler
@@ -57,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initContentViews() {
-        drawerHandler = DrawerHandler();
+        drawerHandler = DrawerHandler()
         drawerHandler.handle(navigation.menu)
 
         toggle = ActionBarDrawerToggle(
@@ -76,10 +78,13 @@ class MainActivity : AppCompatActivity() {
                             loadFragment(fragmentJoints)
                         R.id.item_bottom_nav_movement ->
                             loadFragment(fragmentMovement)
+                        R.id.item_bottom_nav_info ->
+                            loadFragment(fragmentInfo)
                     }
                     true
                 }
 
+        fragmentInfo = InfoFragment()
         fragmentJoints = JointsFragment()
         fragmentMovement = MovementFragment()
 
