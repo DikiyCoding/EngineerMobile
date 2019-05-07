@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
-    <gradient
+    <solid
+        android:color="@color/selector_button_colors" />
+    <!--<gradient
         android:angle="135"
         android:endColor="@color/button_gradient_top"
-        android:startColor="@color/button_gradient_bottom" />
+        android:startColor="@color/selector_button_colors" />-->
 </shape>

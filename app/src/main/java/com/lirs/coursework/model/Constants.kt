@@ -1,9 +1,6 @@
 package com.lirs.coursework.model
 
-import java.net.DatagramSocket
 import java.net.InetAddress
-import java.net.SocketException
-import java.net.UnknownHostException
 
 object Constants {
 

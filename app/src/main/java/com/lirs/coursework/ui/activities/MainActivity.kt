@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.lirs.coursework.R
 import com.lirs.coursework.model.Client
 import com.lirs.coursework.model.ClientService
@@ -17,8 +18,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.parceler.Parcels
+import veg.mediaplayer.sdk.MediaPlayer
+import veg.mediaplayer.sdk.MediaPlayerConfig
+import java.nio.ByteBuffer
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MediaPlayer.MediaPlayerCallback {
 
     private lateinit var serviceIntent: Intent
     private lateinit var fragmentInfo: Fragment
@@ -34,9 +38,19 @@ class MainActivity : AppCompatActivity() {
         init()
     }
 
+    override fun OnReceiveData(p0: ByteBuffer, p1: Int, p2: Long): Int {
+        return 0
+    }
+
+    override fun Status(p0: Int): Int {
+        return 0
+    }
+
     override fun onDestroy() {
-        super.onDestroy()
+        video.Close()
+        video.onDestroy()
         stopService(serviceIntent)
+        super.onDestroy()
     }
 
     override fun onBackPressed() {
@@ -74,12 +88,18 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation
                 .setOnNavigationItemSelectedListener { item ->
                     when (item.itemId) {
-                        R.id.item_bottom_nav_joints ->
+                        R.id.item_bottom_nav_joints -> {
                             loadFragment(fragmentJoints)
-                        R.id.item_bottom_nav_movement ->
+                            video.visibility = View.VISIBLE
+                        }
+                        R.id.item_bottom_nav_movement -> {
                             loadFragment(fragmentMovement)
-                        R.id.item_bottom_nav_info ->
+                            video.visibility = View.VISIBLE
+                        }
+                        R.id.item_bottom_nav_info -> {
+                            video.visibility = View.GONE
                             loadFragment(fragmentInfo)
+                        }
                     }
                     true
                 }
@@ -89,6 +109,13 @@ class MainActivity : AppCompatActivity() {
         fragmentMovement = MovementFragment()
 
         loadFragment(fragmentMovement)
+
+        val config = MediaPlayerConfig()
+        config.connectionUrl = "rtsp://10.42.0.1:8554/zoom"
+        config.decodingType = 0
+
+        video.Open(config, this)
+        video.Play()
     }
 
     private fun loadFragment(fragment: Fragment) {

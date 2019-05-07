@@ -4,16 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <VideoView
-        android:id="@+id/video"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/layout_outside_margin"
-        app:layout_constraintBottom_toTopOf="@+id/layout_waist"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/layout_waist"
         android:layout_width="wrap_content"
@@ -143,8 +133,8 @@
             style="@style/btn_toggle_inside_common.joints.gripper"
             android:layout_marginEnd="@dimen/layout_inside_margin"
             android:background="@drawable/shape_btn_oval"
-            android:textOff="@string/title_open"
-            android:textOn="@string/title_open" />
+            android:textOff="@string/title_close"
+            android:textOn="@string/title_close" />
 
         <ToggleButton
             android:id="@+id/toggle_gripper"
@@ -157,8 +147,8 @@
             style="@style/btn_toggle_inside_common.joints.gripper"
             android:layout_marginStart="@dimen/layout_inside_margin"
             android:background="@drawable/shape_btn_oval"
-            android:textOff="@string/title_close"
-            android:textOn="@string/title_close" />
+            android:textOff="@string/title_open"
+            android:textOn="@string/title_open" />
 
     </LinearLayout>
 

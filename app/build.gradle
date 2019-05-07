@@ -40,6 +40,9 @@ dependencies {
     kapt "org.parceler:parceler:$parceler"
     implementation "org.parceler:parceler-api:$parceler"
 
+    implementation files('src/main/jniLibs/mediaplayersdk.jar')
+    implementation files('libs/org.apache.http.legacy.jar')
+
     //JUnit
     testImplementation "junit:junit:$junit"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

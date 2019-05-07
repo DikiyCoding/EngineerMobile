@@ -4,8 +4,17 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="button_gradient_top">#4141E9</color>
-    <color name="button_gradient_bottom">#B64FB6</color>
+    <!--<color name="button_gradient_top">#4141E9</color>-->
+    <!--<color name="button_gradient_bottom">#B64FB6</color>-->
 
+    <!--02ADE1-->
+    <!--<color name="button_gradient_top">#00C4FF</color>-->
+    <!--<color name="button_gradient_bottom">#094E9E</color>-->
+
+    <!--<color name="button_gradient_top">#FF364A</color>-->
+    <!--<color name="button_gradient_bottom">#D52019</color>-->
+
+    <color name="color_toggle_button_passive">#009AC9</color>
+    <color name="color_toggle_button_active">#FF364A</color>
 
 </resources>
