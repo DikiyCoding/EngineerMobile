@@ -10,5 +10,5 @@ import com.lirs.coursework.R
 class InfoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-            inflater.inflate(R.layout.fragment_info, null)
+        inflater.inflate(R.layout.fragment_info, null)
 }

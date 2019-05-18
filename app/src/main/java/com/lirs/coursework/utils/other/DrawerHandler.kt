@@ -1,6 +1,5 @@
-package com.lirs.coursework.utils
+package com.lirs.coursework.utils.other
 
-import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.widget.Button
@@ -55,7 +54,7 @@ class DrawerHandler {
         initViews()
         initListeners()
     }
-    
+
     private fun initMenu(menu: Menu) {
         this.menu = menu
     }
@@ -144,32 +143,26 @@ class DrawerHandler {
         override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
             when (seekBar) {
                 seekBarMove -> {
-                    Log.d("Logs", "Move speed is: $progress")
                     tvMove.text = "$progress"
                     PackageManager.setMoveSpeed(progress)
                 }
                 seekBarRotate -> {
-                    Log.d("Logs", "Rotate speed is: $progress")
                     tvRotate.text = "$progress"
                     PackageManager.setRotateSpeed(progress)
                 }
                 seekBarNeck -> {
-                    Log.d("Logs", "Neck speed is: $progress")
                     tvNeck.text = "$progress"
                     PackageManager.setNeckSpeed(progress)
                 }
                 seekBarShoulder -> {
-                    Log.d("Logs", "Shoulder speed is: $progress")
                     tvShoulder.text = "$progress"
                     PackageManager.setShoulderSpeed(progress)
                 }
                 seekBarElbow -> {
-                    Log.d("Logs", "Elbow speed is: $progress")
                     tvElbow.text = "$progress"
                     PackageManager.setElbowSpeed(progress)
                 }
                 seekBarWaist -> {
-                    Log.d("Logs", "Waist speed is: $progress")
                     tvWaist.text = "$progress"
                     PackageManager.setWaistSpeed(progress)
                 }

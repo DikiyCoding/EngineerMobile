@@ -20,6 +20,7 @@ class ClientService : Service() {
 
     override fun onDestroy() {
         Log.d("Logs", "Service is destroyed")
+        executor.shutdown()
         super.onDestroy()
     }
 

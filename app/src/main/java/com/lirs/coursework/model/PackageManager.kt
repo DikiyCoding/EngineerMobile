@@ -71,7 +71,7 @@ object PackageManager {
      * для "Shoulder" - наверх
      */
 
-    fun toggleTorch() = button1.togglePackage(true)
+    fun turnOnTorch() = button1.togglePackage(true)
 
     fun startOpenGripper() = button0.togglePackage(true)
 
@@ -117,6 +117,8 @@ object PackageManager {
     /**
      * Deactivate Joints
      */
+
+    fun turnOffTorch() = button1.togglePackage(false)
 
     fun stopOpenGripper() = button0.togglePackage(false)
 

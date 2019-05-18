@@ -3,8 +3,4 @@
     android:shape="oval">
     <solid
         android:color="@color/selector_button_colors" />
-    <!--<gradient
-        android:angle="135"
-        android:endColor="@color/button_gradient_top"
-        android:startColor="@color/selector_button_colors" />-->
 </shape>

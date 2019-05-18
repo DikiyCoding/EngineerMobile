@@ -19,7 +19,7 @@ class Client : Runnable {
         val SOCKET_CLIENT =
                 DatagramSocket(
                         Constants.PORT_CLIENT.toInt(),
-                        Constants.ADDRESS_CLIENT)
+                        Constants.ADDRESS_CLIENT_DHCP)
         try {
             while (true) {
                 SOCKET_CLIENT.send(PACKET_CLIENT)
